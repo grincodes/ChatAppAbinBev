@@ -37,6 +37,7 @@ Endpoints:
 ## Resources
  -  Postman collection for Http resources  is available in the repo.
  - I couldn't export the websocket Postman collection because its in beta but i added a screenshot of how it looks like
+ ![Screenshot](https://raw.githubusercontent.com/grincodes/ChatAppAbinBev/main/postman-websocket.png)  
   
 
 
