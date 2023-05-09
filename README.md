@@ -17,8 +17,13 @@ Endpoints:
  - Web Socket Gateway
   http://localhost:3000/ws-gateway
 
-- Web Sockets events to 
+- Web Sockets events  
   - newMessage,createMessage
+
+## Token Based Auth With Cookies
+  The Auth is a Jwt based athentication that saves logged in users
+  token on the client cookie so users dont need to keep passing jwt token on the client header for subsequent requests.
+  Authentication for  external system or services can be done by passing the token to an authentication header without any Bearer prefix.
 
 
  ## WebSocket Authentication
