@@ -7,7 +7,7 @@ steps:
         '-t',
         'us-east1-docker.pkg.dev/containerdemo-365021/chatapp-abinbev-messages/production',
         '-f',
-        'apps/reservations/Dockerfile',
+        'apps/messages/Dockerfile',
         '.',
       ]
   - name: 'gcr.io/cloud-builders/docker'
