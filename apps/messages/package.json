@@ -1,0 +1,22 @@
+{
+  "name": "@chat-app-ab-in-bev/messages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/platform-socket.io": "9.0.0",
+    "@nestjs/websockets": "9.0.0",
+    "socket.io": "^4.6.1"
+  },
+  "devDependencies": {
+  
+  }
+}

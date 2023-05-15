@@ -5,3 +5,4 @@ export * from './models';
 export * from './constants';
 export * from './dto';
 export * from './auth';
+export * from './health';

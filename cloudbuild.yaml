@@ -1,0 +1,32 @@
+steps:
+  # Messages
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'us-east1-docker.pkg.dev/containerdemo-365021/chatapp-abinbev-messages/production',
+        '-f',
+        'apps/reservations/Dockerfile',
+        '.',
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      ['push', 'us-east1-docker.pkg.dev/containerdemo-365021/chatapp-abinbev-messages/production']
+
+  # Auth
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'build',
+        '-t',
+        'us-east1-docker.pkg.dev/containerdemo-365021/chatapp-abinbev-auth/production',
+        '-f',
+        'apps/auth/Dockerfile',
+        '.',
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-east1-docker.pkg.dev/containerdemo-365021/chatapp-abinbev-auth/production']
+
+
+ 

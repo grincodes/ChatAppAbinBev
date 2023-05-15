@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: messages
+  name: messages
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: messages
+  template:
+    metadata:
+      labels:
+        app: messages
+    spec:
+      containers:
+      - image: us-east1-docker.pkg.dev/containerdemo-365021/chatapp-abinbev-messages/production
+        name: messages
+        env:
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: connectionString
+            - name: PORT
+              value: '3000'
+            - name: AUTH_HOST
+              value: auth-tcp
+            - name: AUTH_PORT
+              value: '3002'
+        ports:
+          - containerPort: 3000      

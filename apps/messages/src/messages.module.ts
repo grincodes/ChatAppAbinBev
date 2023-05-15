@@ -2,7 +2,12 @@ import { Module } from '@nestjs/common';
 import { MessagesController } from './messages.controller';
 import { MessagesService } from './messages.service';
 import { MessageRepository } from './messages.repository';
-import { AUTH_SERVICE, DatabaseModule, LoggerModule } from '@app/common';
+import {
+  AUTH_SERVICE,
+  DatabaseModule,
+  HealthModule,
+  LoggerModule,
+} from '@app/common';
 import { MessageDocument, MessageSchema } from './models/message.schema';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
@@ -38,6 +43,7 @@ import { WsMessageGateway } from './ws-message-gateway/ws-message.gateway';
         inject: [ConfigService],
       },
     ]),
+    HealthModule,
   ],
   controllers: [MessagesController],
   providers: [MessagesService, MessageRepository, WsMessageGateway],

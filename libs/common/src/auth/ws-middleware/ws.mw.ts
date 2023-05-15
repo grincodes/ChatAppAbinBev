@@ -1,7 +1,6 @@
 import { ClientProxy } from '@nestjs/microservices';
 import { Socket } from 'socket.io';
 import { WsJwtAuthGuard } from '../ws-jwt-auth.guard';
-import { WsException } from '@nestjs/websockets';
 
 export type SocketIOMiddleware = {
   (client: Socket, next: (err?: Error) => void);

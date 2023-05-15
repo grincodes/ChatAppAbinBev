@@ -36,13 +36,13 @@ export class WsMessageGateway {
     });
   }
 
-  @SubscribeMessage('sendMessage')
-  async createMessage(client: any, payload: MessageDto) {
-    // const msg = await this.msgService.wsCreateMsg(payload);
-    payload.timestamp = new Date();
-    this.server.emit('newMessage', payload);
-    return payload;
-  }
+  // @SubscribeMessage('sendMessage')
+  // async createMessage(client: any, payload: MessageDto) {
+  //   // const msg = await this.msgService.wsCreateMsg(payload);
+  //   payload.timestamp = new Date();
+  //   this.server.emit('newMessage', payload);
+  //   return payload;
+  // }
 
   sendMessage(message: MessageType) {
     this.server.emit('newMessage', message);
